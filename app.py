@@ -107,7 +107,7 @@ def individual():
 
         # scaling our values before prediction
         # reading the train dataset for individual
-        x_train=pd.read_csv("data/ind_train.csv",usecols=range(1,22))
+        x_train=pd.read_csv("https://media.githubusercontent.com/media/BHAVI2803/LENDING_CLUB_DEPLOYMENT/main/data/ind_train.csv",error_bad_lines=False,usecols=range(1,22))
 
         scaler = StandardScaler()
         scaler.fit(x_train)
