@@ -80,9 +80,9 @@ def individual():
         sub_grad_value=int(sub_grad_model.predict(np.reshape(Fico_score,(1,-1)))[0])
 
     # loading csv file for interset rate
-        grade_to_apr_df=pd.read_csv("data/grade_to_apr.csv",sep=r'\s*,\s*',header=0, encoding='ascii', engine='python')
+        grade_to_apr_df=pd.read_csv("data/grade_to_apr.csv")
         if term==0:
-            interest_rate= round((grade_to_apr_df[grade_to_apr_df['grade_num']==sub_grad_value]['36_mo'].values[0])/100,2)
+            interest_rate= round((grade_to_apr_df[grade_to_apr_df.iloc[:,-1]==sub_grad_value]['36_mo'].values[0])/100,2)
             # calculating EMI
             emi =int( loan_amount * ((interest_rate * (1 + interest_rate) ** 36) / ((1 + interest_rate) ** 36 - 1)))
         else :
@@ -94,7 +94,7 @@ def individual():
         installment_ratio = round(emi / loan_amount, 2)
 
         # getting grade
-        grade=grade_to_apr_df[grade_to_apr_df['grade_num'] == sub_grad_value]['grade_value'].values[0]
+        grade=grade_to_apr_df[grade_to_apr_df.iloc[:,-1] == sub_grad_value]['grade_value'].values[0]
 
         # restructuring interset rate for prediction
         int_rate=interest_rate*100
