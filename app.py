@@ -86,7 +86,7 @@ def individual():
             # calculating EMI
             emi =int( loan_amount * ((interest_rate * (1 + interest_rate) ** 36) / ((1 + interest_rate) ** 36 - 1)))
         else :
-            interest_rate = round((grade_to_apr_df[grade_to_apr_df['grade_num'] == sub_grad_value]['60_mo'].values[0]) / 100,2)
+            interest_rate = round((grade_to_apr_df[grade_to_apr_df.iloc[:,-1] == sub_grad_value]['60_mo'].values[0]) / 100,2)
             # calculating EMI
             emi = int(loan_amount * ((interest_rate * (1 + interest_rate) ** 60) / ((1 + interest_rate) ** 60 - 1)))
 
