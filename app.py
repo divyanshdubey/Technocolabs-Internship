@@ -80,13 +80,13 @@ def individual():
         sub_grad_value=int(sub_grad_model.predict(np.reshape(Fico_score,(1,-1)))[0])
 
     # loading csv file for interset rate
-        grade_to_apr_df=pd.read_csv("data/grade_to_apr.csv")
+        grade_to_apr_df=pd.read_csv('https://media.githubusercontent.com/media/BHAVI2803/LENDING_CLUB_DEPLOYMENT/main/data/grade_to_apr.csv',error_bad_lines=False)
         if term==0:
             interest_rate= round((grade_to_apr_df[grade_to_apr_df.iloc[:,-1]==sub_grad_value]['36_mo'].values[0])/100,2)
             # calculating EMI
             emi =int( loan_amount * ((interest_rate * (1 + interest_rate) ** 36) / ((1 + interest_rate) ** 36 - 1)))
         else :
-            interest_rate = round((grade_to_apr_df[grade_to_apr_df.iloc[:,-1] == sub_grad_value].iloc[:,4].values[0]) / 100,2)
+            interest_rate = round((grade_to_apr_df[grade_to_apr_df.iloc[:,-1] == sub_grad_value]['60_mo'].values[0]) / 100,2)
             # calculating EMI
             emi = int(loan_amount * ((interest_rate * (1 + interest_rate) ** 60) / ((1 + interest_rate) ** 60 - 1)))
 
