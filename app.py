@@ -179,7 +179,7 @@ def joint():
         sub_grad_value = int(sub_grad_model.predict(np.reshape(Fico_score, (1, -1)))[0])
 
         # loading csv file for interset rate
-        grade_to_apr_df = pd.read_csv("data/grade_to_apr.csv")
+        grade_to_apr_df = pd.read_csv('https://media.githubusercontent.com/media/BHAVI2803/LENDING_CLUB_DEPLOYMENT/main/data/grade_to_apr.csv',error_bad_lines=False)
         if term == 0:
             interest_rate = round((grade_to_apr_df[grade_to_apr_df['grade_num'] == sub_grad_value]['36_mo'].values[0]) / 100,2)
             # calculating EMI
@@ -204,7 +204,7 @@ def joint():
                         issue_d, credit_history, int_rate,total_account, term, verification_status, dti, revol_util,
                         home_ownership, credit_ratio, emi,installment_ratio, sub_grad_value, grade]
         final_j = [np.array(int_features)]
-        x_train_j=pd.read_csv("data/jnt_train.csv",usecols=range(1,22))
+        x_train_j=pd.read_csv("https://media.githubusercontent.com/media/BHAVI2803/LENDING_CLUB_DEPLOYMENT/main/data/jnt_train.csv",,error_bad_lines=False,usecols=range(1,22))
 
         scaler = StandardScaler()
         scaler.fit(x_train_j)
