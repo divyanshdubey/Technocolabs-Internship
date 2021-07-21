@@ -94,7 +94,7 @@ def individual():
         installment_ratio = round(emi / loan_amount, 2)
 
         # getting grade
-        grade=grade_to_apr_df[grade_to_apr_df.iloc[:,-1] == sub_grad_value]['grade_value'].values[0]
+        grade=grade_to_apr_df[grade_to_apr_df['grade_num'] == sub_grad_value]['grade_value'].values[0]
 
         # restructuring interset rate for prediction
         int_rate=interest_rate*100
