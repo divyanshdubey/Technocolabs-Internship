@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+  
+    font-size: 20px;
+    
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.inputform{
+  max-width: 1500px;
+  width: 80%;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.inputform .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  color:white;
+}
+.inputform .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:safe;
+  margin:10px 50px 20px;;
+ 
+}
+form .user-details .input-box{
+
+  margin-bottom: 22px;
+  width: calc(100% / 3 - 200px);
+
+}
+form .input-box span.details{
+  display:table-cell;
+  font-weight: 650;
+  margin-bottom: 10px;  
+  color:rgb(253, 254, 255);
+}
+form .button{
+    color:black;
+    position: center;
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 15%;
+   border-radius: 5px;
+   border: none;
+   font-size: 18px;
+   font-weight: 600;
+   letter-spacing: 1px;
+    cursor:pointer;
+    position: relative;
+    color: #f7f7f7;
+    background-color: rgb(184, 62, 46);
+    font-size: larger;
+  left: 55%;
+  top: -200%;
+}   
+
+.container h3{
+  font-size: 35px;
+  /* position: absolute; */
+  /* right: 120px; */
+  /* top: 60%; */
+  text-align: center;
+
+  
+}
+
+.container h4{
+  font-size: 28px;
+  /* position: absolute; */
+  /* right: 120px; */
+  /* top: 800px; */
+  text-align: center;
+
+  
+}
+
+form .button input:hover{
+  border: 1px solid #3cf436;
+    background: #27ac22;
+    transition: 0.5s;
+}
+
