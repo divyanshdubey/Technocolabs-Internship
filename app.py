@@ -101,8 +101,7 @@ def individual():
          # creating an array for all input features
 
         int_features = [earliest_cr_line, annual_income, zip_code, mort_account, Fico_score, open_account, loan_amount,
-                        issue_d, credit_history, int_rate, total_account, term, verification_status, dti, revol_util,
-                        home_ownership, credit_ratio, emi, installment_ratio, sub_grad_value, grade]
+                        int_rate, total_account, term, verification_status, dti, revol_util, home_ownership, emi,grade]
         final = [np.array(int_features)]
 
         # scaling our values before prediction
@@ -201,8 +200,7 @@ def joint():
         # scaling our values before prediction
 
         int_features = [earliest_cr_line, annual_income, zip_code, mort_account, Fico_score, open_account, loan_amount,
-                        issue_d, credit_history, int_rate,total_account, term, verification_status, dti, revol_util,
-                        home_ownership, credit_ratio, emi,installment_ratio, sub_grad_value, grade]
+                        int_rate, total_account, term, verification_status, dti, revol_util, home_ownership, emi,grade]
         final_j = [np.array(int_features)]
         x_train_j=pd.read_csv("data/jnt_train.csv",usecols=range(1,22))
 
