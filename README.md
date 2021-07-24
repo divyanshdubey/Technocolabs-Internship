@@ -20,7 +20,7 @@ In the last few years, applying for different types of loans through online peer
 2. Second, need to apply explanatory data analysis (EDA) to investigate the features.
 3. Preprocessed data on LendingClub loans labeled on whether or not the borrower defaulted (charged-off) to develop a model and predict whether or not a borrower will pay back their loan. This way in the future when we get a new potential customer who assigned with higher interest loan, we can assess whether or not they are likely to pay back the loan.
 
-### Dataset
+## Dataset
 
 We used LendigClub Dataset possessing almost all features including FICO scores. This dataset contains more than several millions data and because, here, We only use a normal laptop to analyze and model this dataset, thus, We only selected the loans issued in 2018 (almost 0.5 million data) to reduce the processing time.
 
