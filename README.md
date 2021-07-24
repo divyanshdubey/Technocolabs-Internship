@@ -1,5 +1,6 @@
 # LENDING_CLUB_DEPLOYMENT
 
+***
 
 # Capstone Project- Lending Club
 
@@ -26,6 +27,7 @@ We used LendigClub Dataset possessing almost all features including FICO scores.
 
 Moreover, some of the features in this dataset are only relevant after loans are issued and thus, not available at the moment of investing. For this reason, We used features list from here that are available and visible to investors before issuing a loan. To match this feature list to the main dataset, We did some simple and primary cleaning, whitespace removing, and spell corrections using dropping and “regular expression” technique. Also, it requires to check the unmatched features to see if some of them could be matched manually.
 
+***
 
 ## DATA SEGMENTATION AND DATA CLEANING
 
@@ -92,8 +94,8 @@ Moreover, some of the features in this dataset are only relevant after loans are
 
 •	The  graph        shows   Interest  Rate    on  the  Y axis and term (number of months) on the x axis.
 •	On X axis-
-0: 36 months
-1: 60 months
+    0: 36 months
+    1: 60 months
 •	Interest    rates  are  based  on  term.  Larger amounts  were  seen  to  be  given  for  higher term. The rate  of interest  associated with them is also high.
  
  ![Box Plot Grouped By Terms](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/0190fbb2-416d-47e8-95b8-4dcc4e17edad.jpg )
@@ -103,8 +105,8 @@ Moreover, some of the features in this dataset are only relevant after loans are
 
 •	The graph is made between loan amount Grades from A to G, for two terms (36 months and 60 months).
 •	On X axis-
-0 denotes 36 months
-1 denotes 60 months
+  0 denotes 36 months
+  1 denotes 60 months
 •	Higher loan amount are associated with grade for longer terms.
 •	It can also be observed that marginally equal amount of loan was taken by all the Grades range for same terms.
 
