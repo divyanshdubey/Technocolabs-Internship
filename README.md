@@ -29,6 +29,7 @@ Moreover, some of the features in this dataset are only relevant after loans are
 
 ***
 
+
 ## DATA SEGMENTATION AND DATA CLEANING
 
 •	In this project, we  have p prepared  a processed  dataset by   and  collected   the   clear-cut data available on https://www.kaggle.com/wordsforthewise/lending-club.
@@ -47,6 +48,7 @@ Moreover, some of the features in this dataset are only relevant after loans are
 •	For filling the dates, we used the most used dates in that feature.
 •	Thus our data cleaning process was cleared.
 
+***
 
 ## EXPLORATORY DATA ANALYSIS:
 
@@ -57,13 +59,11 @@ Moreover, some of the features in this dataset are only relevant after loans are
 
 ![Loan Status vs Loan Amount](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/0d60b4e2-bb2f-464b-b41d-79687920d6ce.jpg)
 
-
 ### Average Load Amount vs Grade:
 •	The graph draws a pattern between the loan amount and grade. As the Grade goes down from A to G, the Average Loan Amount linearly increases.
 •	Additionally, it can be observed that the average loan amount of B grade loans is the least of all  grades.
 
 ![Average Load Amount vs Grade](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/33687470-88b1-44bf-b182-373feea629c7.jpg)
-
 
 ### Loan Status diversification:
 
@@ -71,9 +71,7 @@ Moreover, some of the features in this dataset are only relevant after loans are
 •	The dataset is slightly imbalanced and thus was balanced before the model training phase.
 
 ![Loan Status diversification](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/0bc7e011-43d7-4b43-8e02-54f0af7bb350.jpg)
-
-                	 
-
+               
 ### Box Plot for Loan Amount with Grades:
 
 •	It can be inferred from the scenario that larger loans generally appear to be given at a lower grade, with the median loan amount for a grade G loan being almost 5000  higher  than  that    of    a grade A, B, or C loan.
@@ -81,61 +79,62 @@ Moreover, some of the features in this dataset are only relevant after loans are
 
 ![Box Plot for Loan Amount with Grades](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/00b0ec54-7046-4af9-881a-033ce5de6ef6.jpg)
 
-
-
 ### Bar Graph for Loan Amount vs the Loan Status:
 
-•	Higher loan amounts are Verified more often. We already know that larger loans are less in number, but see a higher charge off rate.
-•	It's not the verified status per se, it's the fact that higher loan amounts are riskier and are also verified more often by Lending Club.
+  •	Higher loan amounts are Verified more often. We already know that larger loans are less in number, but see a higher charge off rate.
+  •	It's not the verified status per se, it's the fact that higher loan amounts are riskier and are also verified more often by Lending Club.
 
  ![Bar Graph for Loan Amount vs the Loan Status](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/6d3cd005-4108-4cda-b4fd-125f2d27e858.jpg)
 
 ### Box Plot Grouped By Terms:
 
-•	The  graph        shows   Interest  Rate    on  the  Y axis and term (number of months) on the x axis.
-•	On X axis-
+  •	The  graph        shows   Interest  Rate    on  the  Y axis and term (number of months) on the x axis.
+  •	On X axis-
     0: 36 months
     1: 60 months
-•	Interest    rates  are  based  on  term.  Larger amounts  were  seen  to  be  given  for  higher term. The rate  of interest  associated with them is also high.
+  •	Interest    rates  are  based  on  term.  Larger amounts  were  seen  to  be  given  for  higher term. The rate  of interest  associated with them is also high.
  
  ![Box Plot Grouped By Terms](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/0190fbb2-416d-47e8-95b8-4dcc4e17edad.jpg )
 
 
 ### Loan Amount with respect to Grades:
 
-•	The graph is made between loan amount Grades from A to G, for two terms (36 months and 60 months).
-•	On X axis-
-  0 denotes 36 months
-  1 denotes 60 months
-•	Higher loan amount are associated with grade for longer terms.
-•	It can also be observed that marginally equal amount of loan was taken by all the Grades range for same terms.
+  •	The graph is made between loan amount Grades from A to G, for two terms (36 months and 60 months).
+  •	On X axis-
+    0 denotes 36 months
+    1 denotes 60 months
+  •	Higher loan amount are associated with grade for longer terms.
+  •	It can also be observed that marginally equal amount of loan was taken by all the Grades range for same terms.
 
 ![Loan Amount with respect to Grades](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/8b7ae079-27d5-44f6-926a-9d280001b330.jpg)
 
 ### Loan Amount vs Term: 
 
-•	The graph is made between loan amount and the term (number of months) for 3 types of Loan Status- Fully-paid, Charged- off, and Default
-•	Higher loan amount are associated with longer terms and see higher Charge Offs.
+  •	The graph is made between loan amount and the term (number of months) for 3 types of Loan Status- Fully-paid, Charged- off, and Default
+  •	Higher loan amount are associated with longer terms and see higher Charge Offs.
 
 ![Loan Amount vs Term](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/bb83377e-5617-48f7-90b3-bdc7caa11d2e.jpg)
 
+***
 
 ### Training The Model:
 
 Selecting the pivotal determinants from the accepted data frame, 22 specific columns are selected for optimizing the target variable i.e. whether the loan is to be approved or not.
 Columns Selected for Training Model:
 
-	  loan_amt		  zip_code
-	 earliest_cr_line		  open_acc
-	  fico_score		  total_acc
-	  grade		  revol_util
-	  sub_grade		  target
-	  home_ownership		  issue_d
-	  installment		  credit_history
-	  int_rate		  credit_ratio
-	  mort_acc		  installment_ratio
-	  term		  annual_inc
-	  verification_status		  dti
+  	  loan_amt		  zip_code
+  	 earliest_cr_line		  open_acc
+  	  fico_score		  total_acc
+  	  grade		  revol_util
+  	  sub_grade		  target
+  	  home_ownership		  issue_d
+  	  installment		  credit_history
+  	  int_rate		  credit_ratio
+  	  mort_acc		  installment_ratio
+  	  term		  annual_inc
+  	  verification_status		  dti
+
+***
 
 ## Models Used:
 
@@ -147,12 +146,12 @@ o	n_estimators : 10 ; defines the number of trees in the forest
 o	random_state=10 ; Controls both the randomness of the bootstrapping of the samples used when building trees and the sampling of the features.
 o	max_depth = 6; 
 
-### Individual Account Result Table:
+ Individual Account Result Table:
 
 ![Individual Account Result Table](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/ef8d4498-2b73-4bcc-9d01-e83fbe17aa2d.jpg)
  
 
-### Joint Account Result Table:
+ Joint Account Result Table:
 
 ![Joint Account Result Table](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/f85934a4-5340-4083-9087-f1bed0361b2c.jpg)
 
@@ -169,13 +168,13 @@ o	random_state = 0;
 
 
 
-### Individual Account Result Table:
+Individual Account Result Table:
 
 ![Individual Account Result Table](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/3583cf0b-2529-46e3-bfd5-09bb163d74bd.jpg)
 
  
 
-### Joint Account Result Table:
+Joint Account Result Table:
  
 ![Joint Account Result Table](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/de292774-a3bb-46d4-81f5-dd0f34685991.jpg)
  
@@ -196,24 +195,26 @@ o	n_neighbors = 13; It defines the number of nearest neighbours considered.
 o	P = 2; It is the power parameter. P=2 is used for Euclidean distance.
 o	Metric= ‘euclidean’;
 
-### Accuracy for Individual Account:
+***
+
+## Accuracy for Individual Account:
  
 ![Accuracy for Individual Account](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/9ee63630-5d0c-499f-b7ff-6fece8e294db.jpg)
  
 
-### Results: 
+## Results: 
 
-### Table 1. Accuracy For Different Models:
+Table 1. Accuracy For Different Models:
 
 ![Accuracy For Different Models](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/7898fff1-aed3-4b1f-94e1-fb24c9275e05.jpg)
 
 
 
-### Conclusion :
+## Conclusion :
 
 Based on the results and the summary tables, Regularized Logistic Regression was selected for predictions ahead.
 
-
+***
 
 Now, we use flask framework to create a web app for our model.
 
@@ -244,6 +245,8 @@ we have 4 pages in web app, with help of '@app.route()'
 
 ***
 ### Step-4
+
+***
 
 Now, we take the inputs from user. This step is common for both Individual/Joint type.
 Following is the list for inputs we ask from the user-
@@ -311,7 +314,7 @@ So, on the basis of these conditions we predict the loan status
 
  Else, if all these conditions satisfy, _your loan will be approved_
 
-
+***
 
 ## HEROKU DEPLOYMENT:
 
@@ -344,27 +347,29 @@ Step 3: Once you have verified your email address, you will be able to access th
 ![Email Verification](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/287246bbd31c8a37ecbd9f306dc9104ab67029d0/Images/cf16a215-e22f-47ef-94b6-2031e0be7a9b.jpg)
 
 
-### How to deploy a model on Heroku platform:
+## How to deploy a model on Heroku platform:
 
 
-1.	Login to Heroku from command prompt
-
+### 1.	Login to Heroku from command prompt
 It will ask you to enter email id and password to login. After successful login next screen will show like below:
 
-2.	Install gunicorn
+### 2.	Install gunicorn
 
 Gunicorn is a Python WSGI HTTP Server for UNIX. It allows you to run any Python application concurrently by running multiple Python processes within a single dyno. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and speedy.
  
  ![Install gunicorn](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/9c761797f49b7bbf1531dff07f0cdd4ac5ece327/Images/Install%20Gunicorn.png)
 
-3.	Declare app dependencies
+### 3.	Declare app dependencies
+
 Create requirements.txt file in the root directory of the project by pip freeze command. The requirements.txt file lists all the app dependencies together. When an app is deployed, Heroku reads this file and installs the appropriate Python dependencies using the pip install -r command.
  
  ![Declare app dependencies](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/9c761797f49b7bbf1531dff07f0cdd4ac5ece327/Images/Declare%20app%20dependencies.png)
  
 
-4.	Create Procfile
+### 4.	Create Procfile
+
 The Procfile is always a plain text file that is named Procfile without a file extension in the root directory of the project, to explicitly declare what command should be executed to start your app.
+
 F:\python-projects\flask-projects\flask-app\Procfile
 
 ![Declare app dependencies](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/9c761797f49b7bbf1531dff07f0cdd4ac5ece327/Images/Create%20Profile.png)
@@ -377,17 +382,15 @@ A Heroku app’s web process type is special: it is the only process type that c
 The first app refers to the filename app.py. The second app refers the instance of Flask which is inside app.py file.
 
 
-5.	Initialize git
-
+### 5.	Initialize git
 
 ![Initialize git](https://github.com/BHAVI2803/LENDING_CLUB_DEPLOYMENT/blob/8bef92b62ec598623c18e2f2321c84984b1b72ea/Images/Initialize%20git.png)
  
+### 6.	Create Heroku app, add files to GIT and deploy
 
-6.	Create Heroku app, add files to GIT and deploy
+### 7.	Browse deployed URL
 
-7.	Browse deployed URL
+### 8.	Download full project
 
-8.	Download full project
-
-Project Link: 
+## Project Link: 
 
