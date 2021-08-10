@@ -388,7 +388,9 @@ The first app refers to the filename app.py. The second app refers the instance 
  
 ### 6.	Create Heroku app, add files to GIT and deploy
 
-### 7.	Browse deployed URL
+### 7.	Browse deployed URL:
+
+https://lendingclubloanriskpredict-api.herokuapp.com/
 
 ### 8.	Download full project
 
